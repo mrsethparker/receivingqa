@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvPalletNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Pallet #"
+        app:layout_constraintStart_toStartOf="@+id/etPalletNumber"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etPalletNumber"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textCursorDrawable="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPalletNumber" />
+
+    <TextView
+        android:id="@+id/tvPO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="PO"
+        app:layout_constraintStart_toStartOf="@+id/etPO"
+        app:layout_constraintTop_toBottomOf="@+id/etPalletNumber" />
+
+    <EditText
+        android:id="@+id/etPO"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textCursorDrawable="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPO" />
+
+    <TextView
+        android:id="@+id/tvQA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="QA Name"
+        app:layout_constraintStart_toStartOf="@+id/etQA"
+        app:layout_constraintTop_toBottomOf="@+id/etPO" />
+
+    <EditText
+        android:id="@+id/etQA"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textCursorDrawable="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvQA" />
+
+
+    <TextView
+        android:id="@+id/tvBarcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Barcode"
+        app:layout_constraintStart_toStartOf="@+id/etBarcode"
+        app:layout_constraintTop_toBottomOf="@+id/etQA" />
+
+    <EditText
+        android:id="@+id/etBarcode"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textCursorDrawable="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvBarcode" />
+
+    <TextView
+        android:id="@+id/tvItemNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Item Number"
+        app:layout_constraintStart_toStartOf="@+id/etItemNumber"
+        app:layout_constraintTop_toBottomOf="@+id/etBarcode" />
+
+    <EditText
+        android:id="@+id/etItemNumber"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textCursorDrawable="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvItemNumber" />
+
+    <TextView
+        android:id="@+id/tvQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Quantity"
+        app:layout_constraintStart_toStartOf="@+id/etQuantity"
+        app:layout_constraintTop_toBottomOf="@+id/etItemNumber" />
+
+    <EditText
+        android:id="@+id/etQuantity"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textCursorDrawable="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvQuantity" />
+
+
+    <Button
+        android:id="@+id/btn_add_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Add Item"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etQuantity" />
+
+    <Button
+        android:id="@+id/btn_lookup_item"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:text="+"
+        app:layout_constraintBottom_toBottomOf="@+id/etBarcode"
+        app:layout_constraintEnd_toEndOf="@+id/etBarcode"
+        app:layout_constraintTop_toTopOf="@+id/etBarcode" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
