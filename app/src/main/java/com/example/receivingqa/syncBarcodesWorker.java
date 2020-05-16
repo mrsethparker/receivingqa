@@ -23,6 +23,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+//TODO: complete code documentation
+
 public class syncBarcodesWorker extends Worker {
 
 
@@ -40,9 +42,10 @@ public class syncBarcodesWorker extends Worker {
         return Result.retry();
     }
 
+    //TODO: the remainder of this code is almost identical to the code in ListItem.java. Can we do something about this?
     private void getItems() {
 
-        String SheetUrl = "https://script.google.com/macros/s/AKfycbyyCISwwePQcFhsWPiYXRh96BpI81pAUh8b1c-NJRNLDhHaUX5_/exec?action=getBarcodes";
+        String SheetUrl = BuildConfig.SHEET_URL + "?action=getBarcodes";
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, SheetUrl,
                 new Response.Listener<String>() {
@@ -72,6 +75,8 @@ public class syncBarcodesWorker extends Worker {
 
     private void parseItems(String jsonResponse) {
 
+
+        //TODO: improve insert operation. should be able to perform a single insert with an array of Items. That way we won't have to loop over everything twice.
         ArrayList<HashMap<String, String>> list = new ArrayList<>();
 
         try {

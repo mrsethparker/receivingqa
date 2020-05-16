@@ -138,6 +138,7 @@ public class AddItem extends AppCompatActivity implements View.OnClickListener {
         //Lookup an item number from the barcode field value
         else if (v == buttonLookupItem) {
 
+            //TODO: implement following code as it's own function
             String barcodeText = editTextBarcode.getText().toString().trim().toUpperCase();
 
             //The barcode field was blank so we should say so

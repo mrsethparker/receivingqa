@@ -115,6 +115,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         if (v == buttonSync) {
+            //TODO: can we implement a work success notification of some sort?
             OneTimeWorkRequest syncWorkRequest = new OneTimeWorkRequest.Builder(syncBarcodesWorker.class)
                     .build();
             WorkManager.getInstance(getApplicationContext()).enqueue(syncWorkRequest);

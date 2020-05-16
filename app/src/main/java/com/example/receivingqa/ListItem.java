@@ -26,6 +26,9 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+//TODO: update this code to use RecylerView
+//TODO: should this code use the Room/ViewModel/Livedata architecture?
+//TODO: complete code documentation
 //Display a list of items from a Google Spreadsheet
 public class ListItem extends AppCompatActivity {
 
