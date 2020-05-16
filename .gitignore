@@ -41,3 +41,6 @@ gradle/
 
 #NDK
 obj/
+
+#private files
+apikey.properties

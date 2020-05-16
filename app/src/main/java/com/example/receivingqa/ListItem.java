@@ -60,7 +60,7 @@ public class ListItem extends AppCompatActivity {
         loading =  ProgressDialog.show(this,"Loading","please wait",false,true);
 
         String action;
-        String SheetUrl = "https://script.google.com/macros/s/AKfycbyyCISwwePQcFhsWPiYXRh96BpI81pAUh8b1c-NJRNLDhHaUX5_/exec?action=";
+        String SheetUrl = BuildConfig.SHEET_URL + "?action=";
 
         switch (sheet){
             case "Freight List": action = "getFreightItems";
@@ -80,9 +80,6 @@ public class ListItem extends AppCompatActivity {
         }
 
         SheetUrl += action;
-
-        Log.i("Action is: ", action);
-        //Log.i("URL is: ", SheetUrl);
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, SheetUrl,
                 new Response.Listener<String>() {

@@ -115,13 +115,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         if (v == buttonSync) {
-
             OneTimeWorkRequest syncWorkRequest = new OneTimeWorkRequest.Builder(syncBarcodesWorker.class)
                     .build();
             WorkManager.getInstance(getApplicationContext()).enqueue(syncWorkRequest);
-            //Intent intent = new Intent(getApplicationContext(),syncBarcodes.class);
-            //intent.putExtra("SheetName", "Update Barcodes");
-            //startActivity(intent);
         }
 
     }

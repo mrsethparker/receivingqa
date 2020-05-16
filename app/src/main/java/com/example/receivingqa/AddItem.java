@@ -2,6 +2,7 @@ package com.example.receivingqa;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -76,7 +77,7 @@ public class AddItem extends AppCompatActivity implements View.OnClickListener {
         final String quantity = editTextQuantity.getText().toString().trim();
 
         //Send our field values to the API
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://script.google.com/macros/s/AKfycbyyCISwwePQcFhsWPiYXRh96BpI81pAUh8b1c-NJRNLDhHaUX5_/exec",
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, BuildConfig.SHEET_URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

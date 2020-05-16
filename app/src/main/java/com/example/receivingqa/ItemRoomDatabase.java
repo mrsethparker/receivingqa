@@ -14,20 +14,6 @@ import java.util.concurrent.Executors;
 public abstract class ItemRoomDatabase extends RoomDatabase {
 
     public abstract ItemDao itemDao();
-/*
-    private static ItemRoomDatabase itemDatabase;
-    private Context context;
-    public static ItemRoomDatabase getInstance(Context context){
-        if(itemDatabase == null){
-            itemDatabase = Room.databaseBuilder(context.getApplicationContext(), ItemRoomDatabase.class, "items")
-                    .createFromAsset("items.db")
-                    .allowMainThreadQueries()
-                    .build();
-        }
-        return itemDatabase;
-    }
-
-    */
 
     private static volatile ItemRoomDatabase INSTANCE;
     private static final int NUMBER_OF_THREADS = 4;
