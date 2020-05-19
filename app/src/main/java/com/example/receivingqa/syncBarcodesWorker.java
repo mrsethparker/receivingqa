@@ -2,6 +2,7 @@ package com.example.receivingqa;
 
 
 import android.content.Context;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.work.Worker;
@@ -21,12 +22,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
+import java.util.concurrent.Future;
 
 //TODO: complete code documentation
 
 public class syncBarcodesWorker extends Worker {
 
+    String logMessage;
 
     public syncBarcodesWorker(
             @NonNull Context context,
@@ -100,6 +104,19 @@ public class syncBarcodesWorker extends Worker {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+        try {
+            Future future = ItemRoomDatabase.databaseWriteExecutor.submit(() -> {
+                ItemDao itemDao = (ItemDao) ItemRoomDatabase.getDatabase(getApplicationContext()).itemDao();
+                itemDao.getItemCount();
+            });
+
+            logMessage = Calendar.getInstance().getTime().toString() + ": There are " + future.get().toString() + " entries in the database.";
+        } catch (Exception e) {
+
+        }
+
+        //Log.i("Message", logMessage);
 
         ItemRoomDatabase.databaseWriteExecutor.execute(() -> {
             ItemDao itemDao = (ItemDao) ItemRoomDatabase.getDatabase(getApplicationContext()).itemDao();
